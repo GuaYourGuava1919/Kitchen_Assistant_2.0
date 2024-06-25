@@ -1,4 +1,11 @@
-.login_container {
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fe8b83;
+}
+.app .login_container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,28 +15,28 @@
   border-radius: 20px;
   height: 80%;
 }
-.login_container .img {
+.app .login_container .img {
   width: 150px;
   height: 150px;
 }
-.login_container .title {
+.app .login_container .title {
   margin-bottom: 20px;
 }
-.login_container .box {
+.app .login_container .box {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 300px;
 }
-.login_container .box .item {
-  display: flex;
+.app .login_container .box .item {
   margin-bottom: 10px;
 }
-.login_container .box .item .title {
+.app .login_container .box .item .title {
   margin: 0;
   margin-right: 10px;
+  text-align: start;
 }
-.login_container .box .item input {
+.app .login_container .box .item input {
   outline: none;
   border: none;
   height: 25px;
@@ -37,7 +44,7 @@
   border-radius: 10px;
   padding: 5px;
 }
-.login_container .box .reset_btn {
+.app .login_container .box .reset_btn {
   color: #fe8b83;
   font-weight: 600;
   border: none;
@@ -45,7 +52,7 @@
   text-decoration: underline;
   background-color: transparent;
 }
-.login_container .box .btn {
+.app .login_container .box .btn {
   width: 50%;
   margin-top: 20px;
   background-color: #fe8b83;
@@ -55,29 +62,36 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.login_container .box .btn:hover {
+.app .login_container .box .btn:hover {
   background-color: #FEC883;
 }
-.login_container .registPwd {
+.app .login_container .registPwd {
   display: flex;
   padding: 20px 10px;
   font-size: 14px;
 }
-.login_container .registPwd .btn {
+.app .login_container .registPwd .btn {
   color: #fe8b83;
   font-weight: 600;
   border: none;
   cursor: pointer;
   background-color: transparent;
 }
-.login_container .footer {
+.app .login_container .footer {
   font-size: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.regist_container {
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fe8b83;
+}
+.app .regist_container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,29 +101,32 @@
   border-radius: 20px;
   height: 80%;
 }
-.regist_container .img {
+.app .regist_container .img {
   width: 100px;
   height: 100px;
 }
-.regist_container .L_title {
+.app .regist_container .L_title {
   color: #fe8b83;
   margin-bottom: 20px;
 }
-.regist_container .box {
+.app .regist_container .box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  padding: 0 10px;
+  width: 280px;
 }
-.regist_container .box .item {
+.app .regist_container .box .item {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
-.regist_container .box .item .title {
+.app .regist_container .box .item .title {
   margin: 0;
   margin-right: 10px;
 }
-.regist_container .box .item input {
+.app .regist_container .box .item input {
   outline: none;
   border: none;
   height: 20px;
@@ -117,15 +134,7 @@
   border-radius: 10px;
   padding: 5px;
 }
-.regist_container .box .reset_btn {
-  color: #fe8b83;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  text-decoration: underline;
-  background-color: transparent;
-}
-.regist_container .box .btn {
+.app .regist_container .box .btn {
   width: 50%;
   margin-top: 20px;
   background-color: #fe8b83;
@@ -135,24 +144,179 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.regist_container .box .btn:hover {
+.app .regist_container .box .btn:hover {
   background-color: #FEC883;
 }
-.regist_container .registPwd {
-  display: flex;
-  padding: 20px 10px;
-  font-size: 14px;
-}
-.regist_container .registPwd .btn {
+.app .regist_container .login_btn {
   color: #fe8b83;
   font-weight: 600;
   border: none;
+  margin-top: 20px;
   cursor: pointer;
   background-color: transparent;
 }
-.regist_container .footer {
+.app .footer {
   font-size: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.header_container {
+  background-color: #fe8b83;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 0;
+  border-radius: 0 0 20px 20px;
+}
+.header_container .box {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.header_container .box h3 {
+  padding: 8px 0;
+  color: #f5f5f5;
+}
+.header_container .box .search {
+  display: flex;
+  align-items: center;
+}
+.header_container .box .search input {
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.info_box {
+  padding: 20px;
+}
+.info_box .title {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.info_box .title p {
+  color: #fe8b83;
+}
+.info_box .items {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+}
+.info_box .items .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.popRecipe_box {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+.popRecipe_box .title {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.popRecipe_box .title p {
+  color: #fe8b83;
+}
+.popRecipe_box .cards {
+  display: flex;
+  overflow: auto;
+}
+.popRecipe_box .cards .card {
+  background-color: #f5f5f5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 20px;
+}
+.popRecipe_box .cards .card img {
+  width: 200px;
+  border-radius: 20px;
+}
+.popRecipe_box .cards .card .content {
+  padding: 10px;
+  width: 100%;
+}
+.popRecipe_box .cards .card .content h3 {
+  font-weight: 600;
+}
+.popRecipe_box .cards .card .content p {
+  font-size: 14px;
+}
+
+.foryou_box {
+  padding: 20px;
+}
+.foryou_box .title {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.foryou_box .title p {
+  color: #fe8b83;
+}
+.foryou_box .cards {
+  overflow: auto;
+  height: 200px;
+}
+.foryou_box .cards .card {
+  display: flex;
+  background: #f5f5f5;
+  width: 100%;
+  margin: 20px 0;
+}
+.foryou_box .cards .card img {
+  width: 100px;
+}
+.foryou_box .cards .card .content {
+  padding: 10px;
+  width: 100%;
+}
+.foryou_box .cards .card .content h3 {
+  font-weight: 600;
+}
+.foryou_box .cards .card .content p {
+  font-size: 14px;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 10px 20px;
+  background-color: #fe8b83;
+}
+.navbar .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar .btn p {
+  color: #f5f5f5;
+}
+.navbar .btn svg path {
+  fill: #f5f5f5;
 }/*# sourceMappingURL=all.css.map */

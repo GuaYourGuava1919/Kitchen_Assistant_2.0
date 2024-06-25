@@ -1,32 +1,65 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { auth } from '../../firebase';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 function Login() {
 
-const navigate = useNavigate();
-const goTo = () => {
-    navigate("account/regist");
-}
+    const [account, setAccount] = useState({
+        email: "",
+        password: "",
+    });
+
+    const navigate = useNavigate();
+    const goTo = () => {
+        navigate("account/regist");
+    }
+
+    const handleChange = (event) => {
+        setAccount({
+            ...account,
+            [event.target.name]: event.target.value,
+        });
+        console.log(account)
+    }   
+    
+    const handleSubmit = async () =>{
+        try{
+            const res = await signInWithEmailAndPassword(
+                auth,
+                account.email,
+                account.password
+            )
+            console.log("登入成功",res)
+            // setTimeout(() => setOpen(true), 1000);
+            setTimeout(() => window.location.href = '/', 3000);
+        }catch(error){
+            console.log(error)
+        }
+    }
+
   return (
+    <div className="app">
     <div className='login_container'>
         <img className='img' src="https://png.pngtree.com/png-vector/20220727/ourmid/pngtree-cooking-logo-png-image_6089722.png" alt="logo" />
         <h2 className='title'>請先登入</h2>
-        <form action="" className='box'>
+        <div action="" className='box'>
             <div className="item">
-                <h3 className='title'>帳號</h3>
-                <input type="text" />
+                <h3 className='title'>電子郵件</h3>
+                <input type="text" name='email' onChange={handleChange} value={account.email}/>
             </div>
             <div className="item">
                 <h3 className='title'>密碼</h3>
-                <input type="password" />
+                <input type="password" name='password' onChange={handleChange} value={account.password}/>
             </div>
             <button className='reset_btn' type='submit'>
                 忘記密碼
             </button>
-            <button className='btn' type='submit'>
+            <button className='btn' onClick={handleSubmit}>
                 登入
             </button>
-        </form>
+        </div>
         <div className="registPwd">
             <p>還沒有帳號嗎？</p>
             <button className='btn'onClick={goTo} >
@@ -37,6 +70,7 @@ const goTo = () => {
             <p>Copyright © 2023 Ryoriman. All rights reserved.</p>
             <p>版權所有© 2023 Ryoriman</p>
         </div>
+    </div>
     </div>
   )
 }

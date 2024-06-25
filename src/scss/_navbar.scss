@@ -1,0 +1,25 @@
+.navbar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 10px 20px;
+    background-color: $primary-color;
+    .btn{
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        p{
+            color: #f5f5f5;
+        }
+        svg{
+            path{
+                fill: #f5f5f5;
+            }
+            // color: #f5f5f5;
+        }
+    }
+}

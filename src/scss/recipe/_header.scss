@@ -38,6 +38,11 @@
         p{
             color: $primary-color;
         }
+        svg{
+            path{
+                fill: $primary-color;
+            }
+        }
     }
     .items{
         display: flex;
@@ -66,6 +71,11 @@
         align-items: center;
         p{
             color: $primary-color;
+        }
+        svg{
+            path{
+                fill: $primary-color;
+            }
         }
     }
     .cards{
@@ -109,6 +119,11 @@
         align-items: center;
         p{
             color: $primary-color;
+        }
+        svg{
+            path{
+                fill: $primary-color;
+            }
         }
     }
     .cards{

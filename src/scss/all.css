@@ -204,6 +204,9 @@
 .info_box .title p {
   color: #fe8b83;
 }
+.info_box .title svg path {
+  fill: #fe8b83;
+}
 .info_box .items {
   display: flex;
   justify-content: space-evenly;
@@ -231,6 +234,9 @@
 }
 .popRecipe_box .title p {
   color: #fe8b83;
+}
+.popRecipe_box .title svg path {
+  fill: #fe8b83;
 }
 .popRecipe_box .cards {
   display: flex;
@@ -274,6 +280,9 @@
 }
 .foryou_box .title p {
   color: #fe8b83;
+}
+.foryou_box .title svg path {
+  fill: #fe8b83;
 }
 .foryou_box .cards {
   overflow: auto;

@@ -3,6 +3,7 @@ import Header from '../../components/Header'
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import Navbar from '../../components/Navbar';
+import StarIcon from '@mui/icons-material/Star';
 
 function HomePage() {
   return (
@@ -67,7 +68,7 @@ function HomePage() {
       </div>
       <div className="foryou_box">
         <div className="title">
-            <WhatshotIcon style={{fontSize:"20"}} />
+            <StarIcon style={{fontSize:"20"}} />
             <p>推薦清單</p>
         </div>
         <div className="cards">

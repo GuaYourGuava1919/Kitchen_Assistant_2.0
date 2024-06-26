@@ -36,7 +36,7 @@ function HomePage() {
 
   useEffect(() => {
     fetchRecipe();
-  }, [db]);
+  });
 
 
   return (

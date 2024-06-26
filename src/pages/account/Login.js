@@ -32,7 +32,7 @@ function Login() {
     
     const handleSubmit = async () =>{
         try{
-            const res = await signInWithEmailAndPassword(
+            await signInWithEmailAndPassword(
                 auth,
                 account.email,
                 account.password

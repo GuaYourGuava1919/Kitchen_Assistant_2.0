@@ -9,7 +9,7 @@ import Navbar from '../../components/Navbar';
 
 
 function Profile() {
-    const [{ user }, dispatch] = useStateValue();
+    const [dispatch] = useStateValue();
     const navigate = useNavigate();
     const handleSubmit = async function () {
         try {

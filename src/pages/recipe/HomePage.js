@@ -1,9 +1,13 @@
 import React from 'react'
-import Header from '../../components/Header'
+//icon
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
-import Navbar from '../../components/Navbar';
 import StarIcon from '@mui/icons-material/Star';
+//components
+import Header from '../../components/Header'
+import Navbar from '../../components/Navbar';
+// import IngredientsPanel from '../../components/IngredientsPanel';
+
 
 function HomePage() {
   return (

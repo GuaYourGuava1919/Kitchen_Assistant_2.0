@@ -332,4 +332,87 @@
 }
 .navbar .btn svg path {
   fill: #f5f5f5;
+}
+
+.fridge_container .fridge_info_box .items {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.fridge_container .fridge_info_box .items .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 20px;
+}
+.fridge_container .function_box {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+.fridge_container .function_box .function {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.fridge_container .function_box .function p {
+  color: white;
+  font-size: 20px;
+}
+.fridge_container .function_box .function svg path {
+  fill: white;
+}
+.fridge_container .function_box .f1 {
+  background-color: #5196BC;
+}
+.fridge_container .function_box .f2 {
+  background-color: #68CAFF;
+}
+.fridge_container .ingredient_status {
+  margin: 20px 20px 60px;
+}
+.fridge_container .ingredient_status .title {
+  display: flex;
+  align-items: center;
+  margin: 10px 10px 0;
+  padding: 10px;
+}
+.fridge_container .ingredient_status .title p {
+  color: #fe8b83;
+  font-weight: 600;
+}
+.fridge_container .ingredient_status .title svg path {
+  fill: #fe8b83;
+}
+.fridge_container .ingredient_status .MuiFormControl-root {
+  margin: 10px 20px;
+  width: 200px;
+}
+.fridge_container .ingredient_status .cards {
+  overflow: auto;
+  height: 200px;
+}
+.fridge_container .ingredient_status .cards .card {
+  display: flex;
+  margin: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.fridge_container .ingredient_status .cards .card img {
+  width: 100px;
+  height: 100%;
+  margin-right: 10px;
+}
+.fridge_container .ingredient_status .cards .card .content {
+  padding: 5px;
+}
+.fridge_container .ingredient_status .cards .card .content h3 {
+  font-size: 18px;
+}
+.fridge_container .ingredient_status .cards .card .content p {
+  font-size: 12px;
 }/*# sourceMappingURL=all.css.map */

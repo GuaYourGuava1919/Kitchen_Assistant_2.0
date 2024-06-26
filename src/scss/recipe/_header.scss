@@ -105,6 +105,15 @@
                     font-size: 14px;
                 }
             }
+            .data_box{
+                display: flex;
+                align-items: center;
+                .index{
+                    display: flex;
+                    align-items: center;
+                    margin: 0 10px;
+                }
+            }
         }
     }
 }

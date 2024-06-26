@@ -10,16 +10,16 @@ function Navbar() {
   return (
     <div>
       <div className="navbar">
-        <div className="btn">
-            <LocalDiningIcon style={{fontSize:"20"}} onClick={() => navigate('/')}/>
+        <div className="btn" onClick={() => navigate('/')}>
+            <LocalDiningIcon style={{fontSize:"20"}} />
             <p>食譜</p>
         </div>
-        <div className="btn">
-            <KitchenIcon style={{fontSize:"20"}} onClick={() => navigate('/fridge')}/>
+        <div className="btn" onClick={() => navigate('/fridge')}>
+            <KitchenIcon style={{fontSize:"20"}} />
             <p>冰箱</p>
         </div>
-        <div className="btn">
-            <FaceIcon style={{fontSize:"20"}} onClick={() => navigate('/profile')}/>
+        <div className="btn" onClick={() => navigate('/profile')}>
+            <FaceIcon style={{fontSize:"20"}} />
             <p>個人</p>
         </div>
       </div>

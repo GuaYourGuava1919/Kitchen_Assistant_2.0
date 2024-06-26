@@ -165,6 +165,20 @@
   align-items: center;
 }
 
+.userInfo_box {
+  padding: 10px;
+  margin: 10px;
+}
+.userInfo_box .btn {
+  background-color: red;
+  color: white;
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
 .header_container {
   background-color: #fe8b83;
   display: flex;
@@ -269,6 +283,15 @@
 }
 .popRecipe_box .cards .card .content p {
   font-size: 14px;
+}
+.popRecipe_box .cards .card .data_box {
+  display: flex;
+  align-items: center;
+}
+.popRecipe_box .cards .card .data_box .index {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
 }
 
 .foryou_box {

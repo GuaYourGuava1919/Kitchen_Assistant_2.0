@@ -46,7 +46,7 @@ function Profile() {
         }
       }
       fetchData();
-    }, [db]);
+    });
     
   return (
     <div>

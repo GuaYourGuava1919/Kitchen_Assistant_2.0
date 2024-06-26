@@ -2,8 +2,6 @@ import React from 'react'
 import { useEffect } from 'react'
 import { collection, getDocs, query } from 'firebase/firestore'
 import { db } from '../../firebase'
-import { useStateValue } from '../../StateProvider'
-import { actionTypes } from '../../reducer'
 
 import Navbar from '../../components/Navbar'
 import Header from '../../components/Header'
@@ -76,7 +74,7 @@ function FridgePage() {
 
   useEffect(() => {
     fetchFridge();
-  }, [db]);
+  });
 
 
   return (

@@ -9,6 +9,7 @@ import { useStateValue } from './StateProvider';
 import { actionTypes } from './reducer';
 import Profile from './pages/account/Profile';
 import FridgePage from './pages/fridge/FridgePage';
+// import { db } from './firebase';
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -20,7 +21,7 @@ function App() {
         user: uid,
       });
     }
-  }, []);
+  });
   return (
     <div className="App">
       <Router>

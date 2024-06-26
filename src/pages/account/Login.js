@@ -4,8 +4,14 @@ import { useState } from 'react';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
 
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+
 function Login() {
 
+    const [open, setOpen] = useState(false);
     const [account, setAccount] = useState({
         email: "",
         password: "",
@@ -31,8 +37,10 @@ function Login() {
                 account.email,
                 account.password
             )
-            console.log("登入成功",res)
-            // setTimeout(() => setOpen(true), 1000);
+            console.log("登入成功")
+            console.log(auth.currentUser.uid)
+            localStorage.setItem("uid",auth.currentUser.uid);
+            setTimeout(() => setOpen(true), 1000);
             setTimeout(() => window.location.href = '/', 3000);
         }catch(error){
             console.log(error)
@@ -71,6 +79,18 @@ function Login() {
             <p>版權所有© 2023 Ryoriman</p>
         </div>
     </div>
+    <Dialog
+        open={open}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        >
+            <DialogContent style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+                <CheckCircleIcon style={{fontSize:'50', margin:'10'}}/>
+                <DialogContentText id="alert-dialog-slide-description">
+                    登入成功！
+                </DialogContentText>
+            </DialogContent>
+        </Dialog>
     </div>
   )
 }

@@ -9,6 +9,7 @@ function HomePage() {
   return (
     <div>
       <Header />
+      {/* 冰箱食材數據 */}
       <div className="info_box">
         <div className="title">
           <KitchenIcon style={{fontSize:"20"}} />
@@ -29,6 +30,7 @@ function HomePage() {
             </div>
           </div>
       </div>
+      {/* 熱門討論 */}
       <div className="popRecipe_box">
       <div className="title">
           <WhatshotIcon style={{fontSize:"20"}} />
@@ -66,6 +68,7 @@ function HomePage() {
         </div>
         
       </div>
+      {/* 推薦清單 */}
       <div className="foryou_box">
         <div className="title">
             <StarIcon style={{fontSize:"20"}} />

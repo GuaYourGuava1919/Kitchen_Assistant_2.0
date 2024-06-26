@@ -21,7 +21,8 @@ function App() {
         user: uid,
       });
     }
-  });
+  },[]);
+
   return (
     <div className="App">
       <Router>

@@ -30,7 +30,7 @@ function Regist() {
             ...account,
             [event.target.name]: event.target.value,
         });
-        console.log(account)
+        // console.log(account)
     }    
 
     const handleSubmit = async () =>{
@@ -45,7 +45,7 @@ function Regist() {
                     account.email,
                     account.password
                 )
-                console.log(res)
+                // console.log(res)
                 setTimeout(() => setOpen(true), 1000);
                 setTimeout(() => window.location.href = '/', 3000);
             }

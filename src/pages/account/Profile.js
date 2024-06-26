@@ -40,13 +40,13 @@ function Profile() {
         if (docSnap.exists()) {
           temp.push({ ...docSnap.data() });
           setUserInfo(...temp);
-          console.log(userInfo)
+          // console.log(userInfo)
         } else {
           console.log("No such document!");
         }
       }
       fetchData();
-    });
+    },[]);
     
   return (
     <div>

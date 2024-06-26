@@ -27,7 +27,7 @@ function Login() {
             ...account,
             [event.target.name]: event.target.value,
         });
-        console.log(account)
+        // console.log(account)
     }   
     
     const handleSubmit = async () =>{
@@ -37,8 +37,8 @@ function Login() {
                 account.email,
                 account.password
             )
-            console.log("登入成功")
-            console.log(auth.currentUser.uid)
+            console.log("登入成功",auth.currentUser.uid)
+            // console.log(auth.currentUser.uid)
             localStorage.setItem("uid",auth.currentUser.uid);
             setTimeout(() => setOpen(true), 1000);
             setTimeout(() => window.location.href = '/', 3000);

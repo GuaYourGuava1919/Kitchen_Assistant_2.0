@@ -24,20 +24,19 @@ function HomePage() {
     where("likes", ">=", 80)
   );
 
-  const fetchRecipe = async () => {
-    const querySnapshot = await getDocs(query_recipe);
-    querySnapshot.forEach((doc) => {
-      const data = { ...doc.data(), id: doc.id };
-      setRecipe((oldData) => [...oldData, data]);
-      console.log(data);
-    });
-    console.log("熱門食譜",recipe)
-  };
-
   useEffect(() => {
+    const fetchRecipe = async () => {
+        const querySnapshot = await getDocs(query_recipe);
+        const newRecipes = [];
+        querySnapshot.forEach((doc) => {
+            const data = { ...doc.data(), id: doc.id };
+            newRecipes.push(data);
+        });
+        console.log(newRecipes)
+        setRecipe(newRecipes);
+    };
     fetchRecipe();
-  });
-
+  }, []); 
 
   return (
     <div>

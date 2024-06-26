@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { collection, getDocs, query } from 'firebase/firestore'
 import { db } from '../../firebase'
+import { useState } from 'react'
 
 import Navbar from '../../components/Navbar'
 import Header from '../../components/Header'
@@ -17,8 +18,8 @@ import FormControl from '@mui/material/FormControl';
 
 function FridgePage() {
   const [status, setStatus] = React.useState('');
-  // const [{ ingredients }, dispatch] = useStateValue();
   const [ingredients, setIngredients] = React.useState([]);
+
 
 
   const handleChange = (event) => {
@@ -35,46 +36,46 @@ function FridgePage() {
 
     const formattedDate = `${year}/${month}/${day}`; // 格式化为 yyyy-mm-dd
 
-    console.log(formattedDate); // 输出 yyyy-mm-dd 格式的日期
+    // console.log(formattedDate); // 输出 yyyy-mm-dd 格式的日期
     return formattedDate;
 }
 
-  async function fetchFridge() {
-    const user = localStorage.getItem("uid");
-    //全部食材
-    var statusRef = collection(db, "user", `${user}`, "fridge");
-    const q = query(statusRef);
-    const querySnapshot = await getDocs(q);
-    const temp = [];
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id, " => ", doc.data());
-      const expSeconds = doc.data().exp.seconds; // 獲取文檔中保存的 Unix 時間戳（秒）
-      const nowSeconds = Math.floor(Date.now() / 1000); // 獲取當前時間的 Unix 時間戳（秒）
-      const totalSeconds = expSeconds - nowSeconds; // 計算時間戳之間的總秒數差異
-      const days = Math.floor(totalSeconds / 86400); // 將秒數差異轉換為天數（1天 = 86400秒）
-      const formattedDate = formatDate(expSeconds);
-
-      let status = "新鮮"; // 默认状态为新鲜
-      if (days < 0) {
-        status = "過期";
-        console.log("過期", days);
-      } else if (days <= 5 && days >= 0) { // 修正即期的判断条件，包括0天
-        status = "即期";
-        console.log("即期", days);
-      }
-        temp.push({
-          status: status,
-          formattedDate: formattedDate, // 添加转换后的日期
-          ...doc.data()
-        });
-      setIngredients([...temp]);
-      console.log(temp);
-  });
-  }
 
   useEffect(() => {
+    const fetchFridge = async () => {
+      const user = localStorage.getItem("uid");
+      //全部食材
+      var statusRef = collection(db, "user", `${user}`, "fridge");
+      const q = query(statusRef);
+      const querySnapshot = await getDocs(q);
+      const temp = [];
+      querySnapshot.forEach((doc) => {
+        // console.log(doc.id, " => ", doc.data());
+        const expSeconds = doc.data().exp.seconds; // 獲取文檔中保存的 Unix 時間戳（秒）
+        const nowSeconds = Math.floor(Date.now() / 1000); // 獲取當前時間的 Unix 時間戳（秒）
+        const totalSeconds = expSeconds - nowSeconds; // 計算時間戳之間的總秒數差異
+        const days = Math.floor(totalSeconds / 86400); // 將秒數差異轉換為天數（1天 = 86400秒）
+        const formattedDate = formatDate(expSeconds);
+  
+        let status = "新鮮"; // 默认状态为新鲜
+        if (days < 0) {
+          status = "過期";
+          // console.log("過期", days);
+        } else if (days <= 5 && days >= 0) { // 修正即期的判断条件，包括0天
+          status = "即期";
+          // console.log("即期", days);
+        }
+          temp.push({
+            status: status,
+            formattedDate: formattedDate, // 添加转换后的日期
+            ...doc.data()
+          });
+        setIngredients([...temp]);
+        console.log(temp);
+    });
+    }
     fetchFridge();
-  });
+  }, []);
 
 
   return (
@@ -130,10 +131,10 @@ function FridgePage() {
           {ingredients.length > 0 ? (
               ingredients.map((ingredient, index) => (
                 <div className="card" key={index}>
-                  <img src="https://kidseatincolor.com/wp-content/uploads/2022/02/eggs-e1648216350119-500x500.jpeg" alt="" />
+                  <img src={ingredient.img} alt="" />
                   <div className="content">
                     <h3>{ingredient.name}</h3>
-                    <p>數量：{ingredient.quantity}</p>
+                    <p>數量：{ingredient.quantity}{ingredient.unit}</p>
                     <p>保存期限：{ingredient.formattedDate}</p>
                     <p>登錄時間：{}</p>
                     <p>狀態：{ingredient.status}</p>
